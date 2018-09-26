@@ -56,10 +56,14 @@ module.exports = class FileUtil {
         let finalDirPath = think.ROOT_PATH + Config.imgRootPath + Config.imgFileTmpRelateDir;
         let tmpDirPath = think.ROOT_PATH + Config.imgRootPath + Config.imgFileRelateDir;
         if (!fs.existsSync(finalDirPath)) {
-            fs.mkdir(finalDirPath);
+          fs.mkdir(finalDirPath, function() {
+
+            });
         }
         if (!fs.existsSync(tmpDirPath)) {
-            fs.mkdir(tmpDirPath);
+            fs.mkdir(tmpDirPath, function() {
+
+            });
         }
     }
 
